@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginStart="@dimen/_15sdp"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:layout_width="wrap_content"
+    android:background="@drawable/comments_background"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/user_name_comments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="~Monica"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/user_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_7sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:text="So true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/user_name_comments"
+        app:layout_constraintTop_toBottomOf="@+id/user_name_comments" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

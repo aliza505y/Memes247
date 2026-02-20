@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Memes247</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="laughing"><b>900</b> others are laughing</string>
+
+</resources>

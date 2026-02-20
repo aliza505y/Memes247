@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "846052138695",
+    "project_id": "memes247-7086a",
+    "storage_bucket": "memes247-7086a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:846052138695:android:bf362a9c3ed3d7cdef68e2",
+        "android_client_info": {
+          "package_name": "com.example.memes247"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLTYnyHirs8iXhbpNXNnyFIk6baPJSR58"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
