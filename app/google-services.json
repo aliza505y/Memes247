@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "846052138695",
+    "firebase_url": "https://memes247-7086a-default-rtdb.firebaseio.com",
     "project_id": "memes247-7086a",
     "storage_bucket": "memes247-7086a.firebasestorage.app"
   },
@@ -12,7 +13,20 @@
           "package_name": "com.example.memes247"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "846052138695-3bcium8e0rrs69ee7tq7kvb4ur4780nm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.memes247",
+            "certificate_hash": "b6eb1ef2fc683f458bc56b7dfa4e98c123f2cb6e"
+          }
+        },
+        {
+          "client_id": "846052138695-5nf4jet0tmm0aca61o79eg3qu5f96pd4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDLTYnyHirs8iXhbpNXNnyFIk6baPJSR58"
@@ -20,7 +34,41 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "846052138695-5nf4jet0tmm0aca61o79eg3qu5f96pd4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:846052138695:android:ac48cb977bc22511ef68e2",
+        "android_client_info": {
+          "package_name": "com.example.memesadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "846052138695-5nf4jet0tmm0aca61o79eg3qu5f96pd4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLTYnyHirs8iXhbpNXNnyFIk6baPJSR58"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "846052138695-5nf4jet0tmm0aca61o79eg3qu5f96pd4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

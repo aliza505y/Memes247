@@ -26,9 +26,9 @@ class ChatAdapter (private val list : ArrayList<ChatDataClass>):
         position: Int
     ) {
         val data = list[position]
-        holder.userName.text=data.name
-        holder.userText.text=data.text
-        holder.time.text=data.time
+        holder.userName.text=data.senderId
+        holder.userText.text=data.message
+        holder.time.text=data.timestamp.toString()
     }
 
     override fun getItemCount(): Int {
