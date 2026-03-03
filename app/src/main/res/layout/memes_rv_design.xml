@@ -44,26 +44,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
 
-    <ImageView
-        android:id="@+id/smile_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/smile"
+    <com.jackandphantom.androidlikebutton.AndroidLikeButton
+        android:id="@+id/likeButton"
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
         android:layout_margin="@dimen/_15sdp"
+        app:like_icon="@drawable/smile"  
+        app:unlike_icon="@drawable/smile" 
+        app:circle_startColor="#fcd229"
+        app:circle_endColor="#f4ac1b"
+        app:dot_color_1="#f5ce31"
+        app:dot_color_2="#ed8128"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/memeImage" />
 
     <TextView
+        android:id="@+id/tvLikeCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/laughing"
-        android:layout_marginStart="@dimen/_15sdp"
+        android:text="0"
+        android:layout_marginStart="@dimen/_10sdp"
         android:textSize="@dimen/_13ssp"
-        app:layout_constraintBottom_toBottomOf="@+id/smile_icon"
-        app:layout_constraintStart_toEndOf="@+id/smile_icon"
-        app:layout_constraintTop_toTopOf="@+id/smile_icon" />
+        app:layout_constraintBottom_toBottomOf="@+id/likeButton"
+        app:layout_constraintStart_toEndOf="@+id/likeButton"
+        app:layout_constraintTop_toTopOf="@+id/likeButton" />
 
     <ImageView
+        android:id="@+id/saveIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/save"
@@ -84,7 +91,7 @@
         android:background="@drawable/comment_back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/smile_icon" />
+        app:layout_constraintTop_toBottomOf="@+id/likeButton" />
 
     <View
         android:layout_width="match_parent"
@@ -92,6 +99,5 @@
         android:background="@color/lightgrey"
         android:layout_marginTop="@dimen/_15sdp"
         app:layout_constraintTop_toBottomOf="@id/comments"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
