@@ -6,12 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".ShuffleFragment">
 
-
     <TextView
         android:id="@+id/meme_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Me_irl"
+        android:text="Loading Meme..."
         android:textColor="@color/black"
         android:textSize="@dimen/_14sdp"
         android:layout_marginTop="@dimen/_20sdp"
@@ -30,19 +29,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/meme_name" />
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:indeterminateTint="#FF0000" 
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/imageView" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView">
 
-        <!-- Download Button -->
         <ImageButton
             android:id="@+id/btnDownload"
             android:layout_width="@dimen/_97sdp"
@@ -53,9 +60,6 @@
             android:scaleType="centerInside"
             android:contentDescription="Download" />
 
-
-
-        <!-- Refresh Button -->
         <ImageButton
             android:id="@+id/btnRefresh"
             android:layout_width="@dimen/_97sdp"
@@ -67,7 +71,5 @@
             android:src="@drawable/refresh" />
 
     </LinearLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
