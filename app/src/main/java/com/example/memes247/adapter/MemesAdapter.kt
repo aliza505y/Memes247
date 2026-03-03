@@ -31,13 +31,10 @@ class MemesAdapter(private val list: ArrayList<MemesDataClass>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = list[position]
         
-        // Load Image
         Glide.with(holder.itemView.context).load(data.imageUrl).into(holder.memeImage)
 
-        // Set initial like count text
         holder.tvLikeCount.text = data.likesCount.toString()
 
-        // Handle the Like Button Animation and Count
         holder.likeButton.setOnLikeEventListener(object : AndroidLikeButton.OnLikeEventListener {
             override fun onLikeClicked(androidLikeButton: AndroidLikeButton) {
                 if (!data.isLiked) {
@@ -56,7 +53,6 @@ class MemesAdapter(private val list: ArrayList<MemesDataClass>) :
             }
         })
 
-        // Comments click listener
         holder.comments.setOnClickListener {
             val intent = Intent(holder.itemView.context, CommentsActivity::class.java)
             holder.itemView.context.startActivity(intent)
