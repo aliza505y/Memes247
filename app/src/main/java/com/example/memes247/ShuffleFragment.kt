@@ -116,32 +116,3 @@ class ShuffleFragment : Fragment() {
     }
 }
 
-
-
-
-package com.example.memes247
-
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.GET
-
-data class MemeResponse(
-    val url: String,
-    val title: String,
-    val author: String
-)
-
-interface MemeApiService {
-    @GET("gimme")
-    suspend fun getRandomMeme(): MemeResponse
-}
-
-object RetrofitInstance {
-    val api: MemeApiService by lazy {
-        Retrofit.Builder()
-            .baseUrl("https://meme-api.com/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-            .create(MemeApiService::class.java)
-    }
-}
