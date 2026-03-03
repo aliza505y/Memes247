@@ -49,19 +49,37 @@ class ShuffleFragment : Fragment() {
     }
 
     private fun loadRandomMeme() {
+        // 1. Show the loading bar before we do anything
+        binding.progressBar.visibility = View.VISIBLE
+        binding.imageView.setImageDrawable(null) // Clear previous image
+
         viewLifecycleOwner.lifecycleScope.launch(Dispatchers.IO) {
             try {
                 val response = RetrofitInstance.api.getRandomMeme()
                 
                 withContext(Dispatchers.Main) {
                     binding.memeName.text = response.title
+                    
                     binding.imageView.load(response.url) {
-                        crossfade(true)
+                        // CROSSFADE REMOVED to fix the download bug!
+                        
+                        // 2. Hide the loading bar only when the image succeeds or fails
+                        listener(
+                            onSuccess = { _, _ ->
+                                binding.progressBar.visibility = View.GONE
+                            },
+                            onError = { _, _ ->
+                                binding.progressBar.visibility = View.GONE
+                                Toast.makeText(requireContext(), "Failed to load image", Toast.LENGTH_SHORT).show()
+                            }
+                        )
                     }
                 }
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {
-                    Toast.makeText(requireContext(), "Failed to load meme", Toast.LENGTH_SHORT).show()
+                    // Hide progress bar if the API call itself fails
+                    binding.progressBar.visibility = View.GONE
+                    Toast.makeText(requireContext(), "Failed to fetch meme", Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -69,6 +87,8 @@ class ShuffleFragment : Fragment() {
 
     private fun saveMemeToGallery() {
         val drawable = binding.imageView.drawable
+        
+        // This check will now pass because crossfade is gone!
         if (drawable !is BitmapDrawable) {
             Toast.makeText(requireContext(), "Image not ready yet!", Toast.LENGTH_SHORT).show()
             return
@@ -115,4 +135,3 @@ class ShuffleFragment : Fragment() {
         _binding = null
     }
 }
-
